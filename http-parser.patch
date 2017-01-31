@@ -1,0 +1,33 @@
+diff --git a/Makefile b/Makefile
+index 5f4eb22..a47f161 100644
+--- a/Makefile
++++ b/Makefile
+@@ -54,7 +54,11 @@ CFLAGS_LIB = $(CFLAGS_FAST) -fPIC
+ 
+ LDFLAGS_LIB = $(LDFLAGS) -shared
+ 
++ifeq (darwin,$(PLATFORM))
++INSTALL ?= ginstall
++else
+ INSTALL ?= install
++endif
+ PREFIX ?= $(DESTDIR)/usr/local
+ LIBDIR = $(PREFIX)/lib
+ INCLUDEDIR = $(PREFIX)/include
+@@ -132,6 +136,10 @@ install-strip: library
+ 	$(INSTALL) -D -s $(SONAME) $(LIBDIR)/$(SONAME)
+ 	ln -s $(LIBDIR)/$(SONAME) $(LIBDIR)/libhttp_parser.$(SOEXT)
+ 
++install-static: package
++	$(INSTALL) -D  http_parser.h $(INCLUDEDIR)/http_parser.h
++	$(INSTALL) -D libhttp_parser.a $(LIBDIR)/libhttp_parser.a
++
+ uninstall:
+ 	rm $(INCLUDEDIR)/http_parser.h
+ 	rm $(LIBDIR)/$(SONAME)
+@@ -146,4 +154,4 @@ clean:
+ contrib/url_parser.c:	http_parser.h
+ contrib/parsertrace.c:	http_parser.h
+ 
+-.PHONY: clean package test-run test-run-timed test-valgrind install install-strip uninstall
++.PHONY: clean package test-run test-run-timed test-valgrind install install-strip install-static uninstall
