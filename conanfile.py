@@ -2,7 +2,7 @@ from conans import ConanFile, ConfigureEnvironment
 from conans.tools import download, untargz, check_sha1
 import os
 
-class LibeventConan(ConanFile):
+class HttpParserConan(ConanFile):
     name = "http-parser"
     version = "2.7.1"
     description = "http request/response parser for c"
