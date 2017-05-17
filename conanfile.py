@@ -1,4 +1,4 @@
-from conans import ConanFile, RunEnvironment
+from conans import ConanFile, AutoToolsBuildEnvironment
 from conans.tools import download, untargz, check_sha1, environment_append
 import os
 
@@ -28,7 +28,7 @@ class HttpParserConan(ConanFile):
 
     def build(self):
 
-        env_build = RunEnvironment(self)
+        env_build = AutoToolsBuildEnvironment(self)
 
         if self.settings.os == "Linux" or self.settings.os == "Macos":
 
