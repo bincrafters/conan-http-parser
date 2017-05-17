@@ -1,5 +1,5 @@
-from conans import ConanFile, ConfigureEnvironment
-from conans.tools import download, untargz, check_sha1
+from conans import ConanFile, RunEnvironment
+from conans.tools import download, untargz, check_sha1, environment_append
 import os
 
 class HttpParserConan(ConanFile):
@@ -28,7 +28,7 @@ class HttpParserConan(ConanFile):
 
     def build(self):
 
-        env = ConfigureEnvironment(self.deps_cpp_info, self.settings)
+        env_build = RunEnvironment(self)
 
         if self.settings.os == "Linux" or self.settings.os == "Macos":
 
@@ -38,9 +38,10 @@ class HttpParserConan(ConanFile):
             else:
                 suffix = 'install-static'
 
-            cmd = 'cd %s && %s make PREFIX=%s/%s/distr %s' % (self.FOLDER_NAME, env.command_line, self.conanfile_directory, self.FOLDER_NAME, suffix)
-            self.output.warn('Running: ' + cmd)
-            self.run(cmd)
+            with environment_append(env_build.vars):
+                cmd = 'cd %s && make PREFIX=%s/%s/distr %s' % (self.FOLDER_NAME, self.conanfile_directory, self.FOLDER_NAME, suffix)
+                self.output.warn('Running: ' + cmd)
+                self.run(cmd)
 
     def package(self):
         self.copy("*.h", dst="include", src="%s/distr/include" % (self.FOLDER_NAME))
