@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/theirix/conan-http-parser.svg)](https://travis-ci.org/theirix/conan-http-parser)
+[![Build status](https://ci.appveyor.com/api/projects/status/18pdj80qtc0q1p64?svg=true)](https://ci.appveyor.com/project/theirix/conan-http-parser)
 
 # conan-http-parser
 
-[![badge](https://img.shields.io/badge/conan.io-http--parser%2F2.7.1-green.svg?logo=data:image/png;base64%2CiVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAA1VBMVEUAAABhlctjlstkl8tlmMtlmMxlmcxmmcxnmsxpnMxpnM1qnc1sn85voM91oM11oc1xotB2oc56pNF6pNJ2ptJ8ptJ8ptN9ptN8p9N5qNJ9p9N9p9R8qtOBqdSAqtOAqtR%2BrNSCrNJ/rdWDrNWCsNWCsNaJs9eLs9iRvNuVvdyVv9yXwd2Zwt6axN6dxt%2Bfx%2BChyeGiyuGjyuCjyuGly%2BGlzOKmzOGozuKoz%2BKqz%2BOq0OOv1OWw1OWw1eWx1eWy1uay1%2Baz1%2Baz1%2Bez2Oe02Oe12ee22ujUGwH3AAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfgBQkREyOxFIh/AAAAiklEQVQI12NgAAMbOwY4sLZ2NtQ1coVKWNvoc/Eq8XDr2wB5Ig62ekza9vaOqpK2TpoMzOxaFtwqZua2Bm4makIM7OzMAjoaCqYuxooSUqJALjs7o4yVpbowvzSUy87KqSwmxQfnsrPISyFzWeWAXCkpMaBVIC4bmCsOdgiUKwh3JojLgAQ4ZCE0AMm2D29tZwe6AAAAAElFTkSuQmCC)](http://www.conan.io/source/http-parser/2.7.1/theirix/stable)
-[Conan.io](https://conan.io) package for [http-parser](https://github.com/http-parser/http-parser) library
+[Conan.io](https://conan.io) package for [http-parser](https://github.com/open-source-parsers/http-parser) library
 
 The packages generated with this **conanfile** can be found in [conan.io](https://conan.io/source/http-parser/2.7.1/theirix/stable).
 
@@ -18,9 +18,14 @@ The packages generated with this **conanfile** can be found in [conan.io](https:
     
 ## Reuse the packages
 
-### Basic setup
+### basic setup
 
     $ conan install http-parser/2.7.1@theirix/stable
+
+### Prerequirements
+
+    JsonCpp needs at least cmake 3.1 for building.
+		If you do not have one, specify flag http-parser:use_cmake_installer=True
     
 ### Project setup
 
