@@ -1,8 +1,6 @@
-diff --git a/Makefile b/Makefile
-index b2476db..b9d9dac 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -54,7 +54,11 @@ CFLAGS_LIB = $(CFLAGS_FAST) -fPIC
+@@ -54,7 +54,11 @@
  
  LDFLAGS_LIB = $(LDFLAGS) -shared
  
@@ -14,34 +12,35 @@ index b2476db..b9d9dac 100644
  PREFIX ?= $(DESTDIR)/usr/local
  LIBDIR = $(PREFIX)/lib
  INCLUDEDIR = $(PREFIX)/include
-@@ -123,15 +127,22 @@ tags: http_parser.c http_parser.h test.c
+@@ -123,14 +127,21 @@
  	ctags $^
  
  install: library
 -	$(INSTALL) -D  http_parser.h $(INCLUDEDIR)/http_parser.h
 -	$(INSTALL) -D $(SONAME) $(LIBDIR)/$(SONAME)
+-	ln -s $(LIBDIR)/$(SONAME) $(LIBDIR)/libhttp_parser.$(SOEXT)
 +	$(INSTALL) -d $(INCLUDEDIR) $(LIBDIR)
 +	$(INSTALL) http_parser.h $(INCLUDEDIR)/http_parser.h
 +	$(INSTALL) $(SONAME) $(LIBDIR)/$(SONAME)
- 	ln -s $(LIBDIR)/$(SONAME) $(LIBDIR)/libhttp_parser.$(SOEXT)
++	cd $(LIBDIR) && ln -s $(SONAME) libhttp_parser.$(SOEXT)
  
  install-strip: library
 -	$(INSTALL) -D  http_parser.h $(INCLUDEDIR)/http_parser.h
 -	$(INSTALL) -D -s $(SONAME) $(LIBDIR)/$(SONAME)
+-	ln -s $(LIBDIR)/$(SONAME) $(LIBDIR)/libhttp_parser.$(SOEXT)
 +	$(INSTALL) -d $(INCLUDEDIR) $(LIBDIR)
 +	$(INSTALL) http_parser.h $(INCLUDEDIR)/http_parser.h
 +	$(INSTALL) -s $(SONAME) $(LIBDIR)/$(SONAME)
- 	ln -s $(LIBDIR)/$(SONAME) $(LIBDIR)/libhttp_parser.$(SOEXT)
- 
++	cd $(LIBDIR) && ln -s $(SONAME) libhttp_parser.$(SOEXT)
++
 +install-static: package
 +	$(INSTALL) -d $(INCLUDEDIR) $(LIBDIR)
 +	$(INSTALL) http_parser.h $(INCLUDEDIR)/http_parser.h
 +	$(INSTALL) libhttp_parser.a $(LIBDIR)/libhttp_parser.a
-+
+ 
  uninstall:
  	rm $(INCLUDEDIR)/http_parser.h
- 	rm $(LIBDIR)/$(SONAME)
-@@ -146,4 +157,4 @@ clean:
+@@ -146,4 +157,4 @@
  contrib/url_parser.c:	http_parser.h
  contrib/parsertrace.c:	http_parser.h
  
