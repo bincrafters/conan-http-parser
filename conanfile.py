@@ -20,7 +20,7 @@ class HttpParserConan(ConanFile):
         os.rename('http-parser-%s' % (self.version), self.name)
 
     def build(self):
-        tools.patch(patch_file=os.path.join(self.conanfile_directory, 'http-parser.patch'),
+        tools.patch(patch_file=os.path.join(self.build_folder, 'http-parser.patch'),
                     base_path=self.name)
 
         env_build = AutoToolsBuildEnvironment(self)
