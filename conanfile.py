@@ -27,15 +27,11 @@ class HttpParserConan(ConanFile):
 
         if self.settings.os == "Linux" or self.settings.os == "Macos":
 
-            suffix = ''
-            if self.options.shared:
-                suffix = 'install'
-            else:
-                suffix = 'install-static'
+            target = 'install' if self.options.shared else 'install-static'
 
             with tools.environment_append(env_build.vars):
                 with tools.chdir(self.name):
-                    cmd = 'make PREFIX=distr %s' % (suffix)
+                    cmd = 'make PREFIX=distr CFLAGS_FAST_EXTRA=-Wno-error CFLAGS_DEBUG_EXTRA=-Wno-error %s' % (target)
                     self.output.warn(cmd)
                     self.run(cmd)
 
