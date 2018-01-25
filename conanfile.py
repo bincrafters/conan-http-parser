@@ -16,7 +16,7 @@ class HttpParserConan(ConanFile):
         del self.settings.compiler.libcxx
 
     def source(self):
-        upstream_ver = self.versions.split("p")[0]
+        upstream_ver = self.version.split("p")[0]
         tools.get("https://github.com/nodejs/http-parser/archive/v%s.tar.gz" % upstream_ver)
         os.rename('http-parser-%s' % upstream_ver, self.name)
 
