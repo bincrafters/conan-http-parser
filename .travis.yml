@@ -1,6 +1,6 @@
 env:
    global:
-     - CONAN_REFERENCE: "http-parser/2.7.1"
+     - CONAN_REFERENCE: "http-parser/2.7.1p1"
      - CONAN_USERNAME: "theirix"
      - CONAN_LOGIN_USERNAME: "theirix"
      - CONAN_CHANNEL: "ci"

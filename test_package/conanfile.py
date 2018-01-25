@@ -4,14 +4,8 @@
 from conans import ConanFile, CMake, tools, RunEnvironment
 import os
 
-# This easily allows to copy the package in other user or channel
-channel = os.getenv("CONAN_CHANNEL", "stable")
-username = os.getenv("CONAN_USERNAME", "theirix")
-
 class DefaultNameConan(ConanFile):
-    name = "DefaultName"
     settings = "os", "compiler", "build_type", "arch"
-    requires = "http-parser/2.7.1@%s/%s" % (username, channel)
     generators = "cmake"
 
     def build(self):
