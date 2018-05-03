@@ -4,7 +4,8 @@
 from conans import ConanFile, CMake, tools, RunEnvironment
 import os
 
-class DefaultNameConan(ConanFile):
+
+class TestPackageConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
 
