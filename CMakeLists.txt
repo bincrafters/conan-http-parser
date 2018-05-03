@@ -22,13 +22,17 @@ endif()
 # Understands standard BUILD_SHARED_LIBS option (default static)
 #
 add_library(http_parser http_parser.c)
-target_compile_options(http_parser PRIVATE -Wall -Wextra -Werror)
+if (UNIX OR MINGW)
+  target_compile_options(http_parser PRIVATE -Wall -Wextra -Werror)
+endif()
 target_include_directories(http_parser PUBLIC .)
 
 # Contrib and benchmarks
 #
 add_executable(bench bench.c)
-target_compile_options(http_parser PRIVATE -Wno-unused-parameter)
+if (UNIX OR MINGW)
+  target_compile_options(http_parser PRIVATE -Wno-unused-parameter)
+endif()
 target_link_libraries(bench http_parser)
 
 add_executable(parsertrace contrib/parsertrace.c)
