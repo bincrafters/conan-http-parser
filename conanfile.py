@@ -10,7 +10,7 @@ class HttpParserConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
     default_options = "shared=False"
-    exports = "%s.patch" % name
+    exports = ["LICENSE.md", "%s.patch" % name]
 
     def configure(self):
         del self.settings.compiler.libcxx
