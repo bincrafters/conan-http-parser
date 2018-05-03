@@ -1,48 +1,45 @@
-[![Build Status](https://travis-ci.org/theirix/conan-http-parser.svg)](https://travis-ci.org/theirix/conan-http-parser)
-[![Build status](https://ci.appveyor.com/api/projects/status/18pdj80qtc0q1p64?svg=true)](https://ci.appveyor.com/project/theirix/conan-http-parser)
+## Package Status
 
-# conan-http-parser
+| Bintray | Windows | Linux & macOS |
+|:--------:|:---------:|:-----------------:|
+|[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/http-parser%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/http-parser%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-http-parser?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-http-parser)|[![Build Status](https://travis-ci.org/bincrafters/conan-http-parser.svg)](https://travis-ci.org/bincrafters/conan-http-parser)|
 
-[Conan.io](https://conan.io) package for [http-parser](https://github.com/nodejs/http-parser) library
+## Conan.io Information
 
-The packages generated with this **conanfile** can be found in [conan.io](https://conan.io/source/http-parser/2.7.1/theirix/stable).
+Bincrafters packages can be found in the following public Conan repository:
 
-## Build packages
+[Bincrafters Public Conan Repository on Bintray](https://bintray.com/bincrafters/public-conan)
 
-    $ pip install conan_package_tools
-    $ python build.py
-    
-## Upload packages to server
+*Note: You can click the "Set Me Up" button on the Bintray page above for instructions on using packages from this repository.*
 
-    $ conan upload http-parser/2.7.1@theirix/stable --all
-    
-## Reuse the packages
+## Issues
 
-### basic setup
+If you wish to report an issue or make a request for a Bincrafters package, please do so here:
 
-    $ conan install http-parser/2.7.1@theirix/stable
+[Bincrafters Community Issues](https://github.com/bincrafters/community/issues)
 
-### Prerequirements
+## General Information
 
-    JsonCpp needs at least cmake 3.1 for building.
-		If you do not have one, specify flag http-parser:use_cmake_installer=True
-    
-### Project setup
+This GIT repository is managed by the Bincrafters team and holds files related to Conan.io.  For detailed information about Bincrafters and Conan.io, please visit the following resources:
 
-If you handle multiple dependencies in your project is better to add a *conanfile.txt*
-    
-    [requires]
-    http-parser/2.7.1@theirix/stable
+[Bincrafters Wiki - Common README](https://github.com/bincrafters/community/wiki/Common-README.md)
 
-    [options]
-    http-parser:shared=true # false
-    
-    [generators]
-    txt
-    cmake
+[Bincrafters Technical Documentation](http://bincrafters.readthedocs.io/en/latest/)
 
-Complete the installation of requirements for your project running:</small></span>
+[Bincrafters Blog](https://bincrafters.github.io)
 
-    conan install . 
+## License Information
 
-Project setup installs the library (and all his dependencies) and generates the files *conanbuildinfo.txt* and *conanbuildinfo.cmake* with all the paths and variables that you need to link with your dependencies.
+Bincrafters packages are hosted on [Bintray](https://bintray.com) and contain Open-Source software which is licensed by the software's maintainers and NOT Bincrafters.  For each Open-Source package published by Bincrafters, the packaging process obtains the required license files along with the original source files from the maintainer, and includes these license files in the generated Conan packages.
+
+The contents of this GIT repository are completely separate from the software being packaged and therefor licensed separately.  The license for all files contained in this GIT repository are defined in the [LICENSE.md](LICENSE.md) file in this repository.  The licenses included with all Conan packages published by Bincrafters can be found in the Conan package directories in the following locations, relative to the Conan Cache root (`~/.conan` by default):
+
+### License(s) for packaged software:
+
+    ~/.conan/data/<pkg_name>/<pkg_version>/bincrafters/package/<random_package_id>/license/<LICENSE_FILES_HERE>
+
+*Note :   The most common filenames for OSS licenses are `LICENSE` AND `COPYING` without file extensions.*
+
+### License for Bincrafters recipe:
+
+    ~/.conan/data/<pkg_name>/<pkg_version>/bincrafters/export/LICENSE.md
