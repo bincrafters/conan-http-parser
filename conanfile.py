@@ -23,6 +23,8 @@ class HttpParserConan(ConanFile):
     def config_options(self):
         if self.settings.os == "Windows":
             self.options.remove("fPIC")
+        if self.settings.compiler == "Visual Studio" and self.options.shared:
+            raise Exception("Shared builds on Windows are not supported")
 
     def configure(self):
         del self.settings.compiler.libcxx
