@@ -52,4 +52,4 @@ class HttpParserConan(ConanFile):
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
         if not self.cpp_info.libs:
-            raise ConanException("No libs collected")
+            raise Exception("No libs collected")
