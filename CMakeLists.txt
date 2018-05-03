@@ -29,11 +29,10 @@ target_include_directories(http_parser PUBLIC .)
 
 # Contrib and benchmarks
 #
-add_executable(bench bench.c)
 if (UNIX OR MINGW)
-  target_compile_options(http_parser PRIVATE -Wno-unused-parameter)
+  add_executable(bench bench.c)
+  target_link_libraries(bench http_parser)
 endif()
-target_link_libraries(bench http_parser)
 
 add_executable(parsertrace contrib/parsertrace.c)
 target_link_libraries(parsertrace http_parser)
