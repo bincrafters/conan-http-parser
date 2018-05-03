@@ -3,7 +3,7 @@
 
 # conan-http-parser
 
-[Conan.io](https://conan.io) package for [http-parser](https://github.com/open-source-parsers/http-parser) library
+[Conan.io](https://conan.io) package for [http-parser](https://github.com/nodejs/http-parser) library
 
 The packages generated with this **conanfile** can be found in [conan.io](https://conan.io/source/http-parser/2.7.1/theirix/stable).
 
