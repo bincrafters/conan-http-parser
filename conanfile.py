@@ -39,8 +39,6 @@ class HttpParserConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        if self.settings.os != "Windows":
-            cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
         cmake.definitions['WITH_CONAN'] = True
         cmake.definitions['WITH_TESTS'] = False
         # BUILD_SHARED_LIBS is set automatically
