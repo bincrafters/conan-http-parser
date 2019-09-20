@@ -2,7 +2,7 @@
 
 | Bintray | Windows | Linux & macOS |
 |:--------:|:---------:|:-----------------:|
-|[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/http-parser%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/http-parser%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-http-parser?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-http-parser)|[![Build Status](https://travis-ci.org/bincrafters/conan-http-parser.svg)](https://travis-ci.org/bincrafters/conan-http-parser)|
+|[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/http-parser%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/http-parser%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-http-parser?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-http-parser)|[![Build Status](https://travis-ci.com/bincrafters/conan-http-parser.svg)](https://travis-ci.com/bincrafters/conan-http-parser)|
 
 ## Conan.io Information
 
