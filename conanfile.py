@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from conans.errors import ConanInvalidConfiguration
 import os
 import shutil
@@ -29,6 +26,7 @@ class HttpParserConan(ConanFile):
 
     def configure(self):
         del self.settings.compiler.libcxx
+        del self.settings.compiler.cppstd
 
     def source(self):
         upstream_ver = self.version.split("p")[0]
